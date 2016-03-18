@@ -1,0 +1,8 @@
+tdesoc<- sample(3:8, 60, replace=TRUE)
+st<-ts(tdesoc, start=2005, frequency = 12)
+tdescomp<-decompose(st)
+names(tdescomp)
+plot(tdescomp)
+Trend<-tdescomp$trend
+Season<-tdescomp$seasonal
+tdesoc.dom<- decompose(st, type="mult") ##modelo multipicativo
